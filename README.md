@@ -1,30 +1,25 @@
-# United Fire – Backflow Test Report App
-
-A Streamlit app that fills in the United Fire Backflow Preventer Assembly Test & Maintenance Report PDF using your actual form as the template.
+# United Fire Backflow Preventer Test Report App
 
 ## Setup
-
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
+## Deploy to Streamlit Cloud (Free)
+1. Push this folder to GitHub (your existing `Backflow_app` repo)
+2. Go to https://share.streamlit.io
+3. New App → select repo → `app.py` → Deploy
+4. Access from any device via the URL
+
 ## Files Required
-- `app.py` — the application
-- `backflow_template.pdf` — your United Fire form (already in repo)
-- `requirements.txt`
-- `session_data.json` — auto-created on first save
+- `app.py` — the Streamlit application
+- `backflow_template.pdf` — your United Fire form (CamScanner scan)
+- `requirements.txt` — Python dependencies
 
 ## Features
-- Fills in your exact United Fire form template
-- All checkboxes mark with an X on the actual form
-- PDF named automatically: `Customer Name - Street Address.pdf`
-- Lock Site Info between jobs — tester info persists
-- Save/restore full session
-- Clear Form keeps tester/branch info sticky
-
-## Deploy on Streamlit Community Cloud (free)
-1. Push all files to a GitHub repo
-2. Go to https://share.streamlit.io
-3. Connect your repo and set `app.py` as the entry point
-4. Done — access from any device including phone
+- Fills your exact United Fire PDF template
+- All checkboxes (CV1, RV, CV2, PVB/SVB, Assembly Type, System Service, Bypass, Repairs)
+- Sticky tester fields (Branch, AHJ, Gauge info, Technician) preserved on Clear
+- Auto-named PDF: `CustomerName - StreetAddress.pdf`
+- Session save/load across browser sessions
